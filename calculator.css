@@ -148,6 +148,10 @@
   :-moz-ui-invalid {
     box-shadow: none;
   }
+  #capacity {
+    visibility:hidden;
+  }
+
   button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
     appearance: button;
   }

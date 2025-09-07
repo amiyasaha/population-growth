@@ -21,8 +21,8 @@
 
             <select name="Pick mode" id="mode">
                 <option value="sel">Select a mode</option>
-                <option value="proj">Projected Population</option>
-                <option value="cap">Surpassed Carrying Capacity</option>
+                <option value="exponential">Exponential Projection</option>
+                <option value="logistic">Logistic Projection</option>
             </select>
 
             <label for="rate">Rate</label>
@@ -30,6 +30,10 @@
 
             <label for="time">Time</label>
             <input type="number" id="time">
+
+            <label for="capacity">Capacity</label>
+            <input type="number" id="capacity">
+
             
             <button id="calculate">Project</button>
             

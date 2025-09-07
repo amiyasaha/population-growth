@@ -1,32 +1,46 @@
-function projectPopulation(pop, rate, time) {
+function exponentialProjection(pop, rate, time) {
     return pop*Math.exp(rate/100*time);
 }
 
-function yearsToCarryingCapacity(pop, rate, cap) {
-
+function logisticProjection(pop, rate, time, cap) {
+    return 1 / Math.exp(rate/100 * cap * time);
 }
 
 window.onload = function () {
     let button = document.getElementById("calculate");
     let result = document.getElementById("result");
+    
+    let mode = document.getElementById("mode");
+    let cap = document.getElementById("capacity");
+
+    mode.onchange = function() {
+        if (mode.value == "logistic") {
+            console.log("logistic");
+            cap.style.visibility = "visible"; 
+        }
+
+        else {
+            cap.style.visibility = "hidden";    
+        }
+    }   
 
     button.onclick = function() {
         let country = document.getElementById("countries").value;
-        let mode = document.getElementById("mode").value;
+        let current = mode.value;
 
         let rate = document.getElementById("rate").value;
         let time = document.getElementById("time").value; 
 
-        if (mode == "proj") {
-            console.log("hello")
-            let pop = projectPopulation(country, rate, time);
-            result.innerHTML = pop;
+
+        if (current == "exponential") {
+            let expPop = exponentialProjection(country, rate, time);
+            result.innerHTML = expPop;
             
         }
 
-        else if (mode == "cap") {
-            let years = yearsToCarryingCapacity(country, rate, time);
-            result.innerHTML = years;
+        else if (current == "logistic") {
+            let logPop = logisticProjection(country, rate, time, cap.value);
+            result.innerHTML = logPop;
         }
 
         else {
