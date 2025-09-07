@@ -5,26 +5,36 @@
         <title>Population Growth Calculator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="calculator.css">
+        <script src="calculator.js"></script>
     </head>
     <body>
         <header>
         </header>
         <main>
             <h1>Population Growth Calculator</h1>
-            <select name="Country">
-                <option value="Japan">Japan</option>
-                <option value="USA">USA</option>
-                <option value="China">China</option>
+            <p></p>
+            <select name="Country" id="countries">
+                <option value="124000000">Japan</option>
+                <option value="340100000">USA</option>
+                <option value="1409000000">China</option>
             </select>
 
-            <select name="Pick mode">
+            <select name="Pick mode" id="mode">
+                <option value="sel">Select a mode</option>
                 <option value="proj">Projected Population</option>
                 <option value="cap">Surpassed Carrying Capacity</option>
             </select>
 
-            <input type="number">
-            <input type="number">
-            <input type="">
+            <label for="rate">Rate</label>
+            <input type="number" id="rate">
+
+            <label for="time">Time</label>
+            <input type="number" id="time">
+            
+            <button id="calculate">Project</button>
+            
+            <div id="result"></div>
+
         </main>
         <footer>
 
