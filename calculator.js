@@ -3,7 +3,7 @@ function exponentialProjection(pop, rate, time) {
 }
 
 function logisticProjection(pop, rate, time, cap) {
-    return 1 / Math.exp(rate/100 * cap * time);
+    return  cap / (1+((cap-pop) / pop) * Math.exp(-rate / 100 * time))
 }
 
 window.onload = function () {
