@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="calculator.css">
         <script src="calculator.js"></script>
     </head>
-    <body>
+    <body class="bg-green-500 text-white">
         <header>
         </header>
-        <main>
-            <h1>Population Growth Calculator</h1>
+        <main class="flex flex-col items-center gap-8">
+            <h1 class="text-3xl">Population Growth Calculator</h1>
             <p></p>
             <select name="Country" id="countries">
                 <option value="124000000">Japan</option>
@@ -24,18 +24,18 @@
                 <option value="exponential">Exponential Projection</option>
                 <option value="logistic">Logistic Projection</option>
             </select>
+            <div class="grid grid-cols-3"> 
+                <label for="rate">Rate</label>
+                <label for="time">Time</label>
+                <label for="capacity">Capacity</label>
+                <input type="number" id="rate">
+                <input type="number" id="time">
+                <input type="number" id="capacity">
+            </div>
 
-            <label for="rate">Rate</label>
-            <input type="number" id="rate">
-
-            <label for="time">Time</label>
-            <input type="number" id="time">
-
-            <label for="capacity">Capacity</label>
-            <input type="number" id="capacity">
 
             
-            <button id="calculate">Project</button>
+            <button id="calculate" class="w-30">Project</button>
             
             <div id="result"></div>
 
