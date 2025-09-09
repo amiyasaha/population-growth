@@ -8,39 +8,41 @@
         <script src="calculator.js"></script>
     </head>
     <body class="bg-green-500 text-white flex flex-col items-center">
-        <header>
+        <header class="h-20 text-3xl rounded-xl bg-amber-400 w-full">
+            <h1>Calculations</h1>
         </header>
-        <main class="flex flex-col items-center gap-8 w-40">
-            <h1 class="text-3xl">Population Growth Calculator</h1>
+        <main class="flex flex-col items-stretch gap-8 w-100">
+            <h1 class="text-2xl text-center">Population Growth Calculator</h1>
             <p></p>
-            <select id="countries">
+            <select id="countries" class="bg-amber-700 rounded-md p-2">
             </select>
 
-            <select id="mode" class="bg-amber-700 rounded-md">
+            <select id="mode" class="bg-amber-700 rounded-md p-2">
                 <option value="sel">Select a mode</option>
                 <option value="exponential">Exponential Projection</option>
                 <option value="logistic">Logistic Projection</option>
             </select>
 
-            <select id="quantity">
+            <select id="quantity" class="bg-amber-700 rounded-md p-2">
                 <option value="pop">Population</option>
                 <option value="yrs">Years</option>
             </select>
 
-            <div class="grid grid-cols-3 w-40"> 
-                <label for="rate">Rate</label>
-                <label for="time">Time</label>
+            <div class="grid grid-cols-4 bg-amber-700 rounded-md p-2"> 
+                <label for="rate">Rate (%)</label>
+                <label for="time">Time (yrs)</label>
                 <label for="capacity">Capacity</label>
+                <label for="goal">Goal</label>
                 <input type="number" id="rate">
                 <input type="number" id="time">
                 <input type="number" id="capacity">
+                <input type="number" id="goal">
             </div>
-            <label for="goal">Goal</label>
-            <input type="number" id="goal">
+
 
 
             
-            <button id="calculate" class="w-30">Project</button>
+            <button id="calculate" class="bg-amber-700 rounded-md p-2">Project</button>
             
             <div id="result"></div>
 
