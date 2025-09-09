@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+This webpage was created to easily project populations of various countries in
+a variety of scenarios. Here, you can see the structure of the website.
+-->
+
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -13,26 +18,28 @@
         </header>
         <main class="flex flex-col items-stretch gap-8 w-100 mt-2">
             <h1 class="text-2xl text-center">Population Growth Calculator</h1>
-            <p class="bg-slate-800 p-2 rounded-md">This is a population growth calculator
+            <p class="bg-slate-800 p-2 rounded-md shadow-xl">This is a population growth calculator
             that utilizes two different projection models: the exponential and the logistic
             growth models. You can use this calculator to find either the projected
             growth over a certain time period or the years it takes to reach
-            a specific population goal. </p>
-            <select id="countries" class="bg-slate-800 rounded-md p-2">
+            a specific population goal. For population data, you can leave the "goal" input field
+            blank and for the year, you can leave the "time" input field blank.
+            The carrying capacity box is only for the logistic growth model. </p>
+            <select id="countries" class="bg-slate-800 rounded-md p-2 shadow-xl">
             </select>
 
-            <select id="mode" class="bg-slate-800 rounded-md p-2">
+            <select id="mode" class="bg-slate-800 rounded-md p-2 shadow-xl">
                 <option value="sel">Select a mode</option>
                 <option value="exponential">Exponential Projection</option>
                 <option value="logistic">Logistic Projection</option>
             </select>
 
-            <select id="quantity" class="bg-slate-800 rounded-md p-2">
+            <select id="quantity" class="bg-slate-800 rounded-md p-2 shadow-xl">
                 <option value="pop">Population</option>
                 <option value="yrs">Years</option>
             </select>
 
-            <div class="grid grid-cols-4 bg-slate-800 rounded-md p-2">
+            <div class="grid grid-cols-4 bg-slate-800 rounded-md p-2 shadow-xl">
                 <label for="rate">Rate (%)</label>
                 <label for="time">Time (yrs)</label>
                 <label for="capacity">Capacity</label>
@@ -43,13 +50,14 @@
                 <input type="number" id="goal">
             </div>
 
-            <button id="calculate" class="bg-slate-800 rounded-md p-2">Project</button>
+            <button id="calculate" class="bg-slate-800 rounded-md p-2 shadow-xl">Project</button>
 
             <div id="result" class="text-center p-2 "></div>
 
         </main>
         <footer>
-            <p class="text-xs">made by Amiya, view source code for citations!</p>
+            <p class="text-xs">made by Amiya, view <a href="https://github.com/amiyasaha/population-growth">source code</a> 
+            for citations!</p>
         </footer>
     </body>
 </html>

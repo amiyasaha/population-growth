@@ -1,3 +1,8 @@
+/* 
+This file contains all the Javascript for my population growth calculator.
+It holds all the interactivity and behavior for the calculator.
+*/
+
 function exponentialProjection(pop, rate, time) {
     return Math.floor(pop * Math.exp(rate / 100 * time));
 }
@@ -30,6 +35,7 @@ function logisticYears(goal, pop, rate, cap) {
 
 // dealing with JSON @ https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON
 async function populateCountries() {
+    // you can find this data here: https://github.com/samayo/country-json/blob/master/src/country-by-population.json
     const request = new Request('country-by-population.json');
     const response = await fetch(request);
     const countries = await response.json();
@@ -64,22 +70,24 @@ window.onload = function() {
         result.innerHTML = "";
         let country = document.getElementById("countries").value;
         let current = mode.value;
+        
         let goal = document.getElementById("goal").value;
         let quantity = document.getElementById("quantity").value;
 
         let rate = document.getElementById("rate").value;
         let time = document.getElementById("time").value;
+
         if (current === "exponential") {
             if (quantity === "pop") {
                 iterativeExponential(country, rate, time, result);
             } else {
-                result.innerHTML = exponentialYears(goal, country, rate / 100);
+                result.innerHTML = exponentialYears(goal, country, rate / 100) + " years.";
             }
         } else if (current === "logistic") {
             if (quantity === "pop") {
                 iterativeLogistic(country, rate, time, cap.value, result);
             } else {
-                result.innerHTML = logisticYears(goal, country, rate / 100, cap.value);
+                result.innerHTML = logisticYears(goal, country, rate / 100, cap.value) + " years.";
             }
         } else {
             console.log("mode");

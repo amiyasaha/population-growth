@@ -1,4 +1,9 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
+/* 
+This file contains all the styling for my population growth calculator. Please 
+note that I am using Tailwind here so I make use of utility classes.
+*/
+
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,18 +12,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-300: oklch(80.8% 0.114 19.571);
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-amber-400: oklch(82.8% 0.189 84.429);
-    --color-amber-700: oklch(55.5% 0.163 48.998);
-    --color-lime-900: oklch(40.5% 0.101 131.063);
-    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-emerald-900: oklch(37.8% 0.077 168.94);
     --color-sky-900: oklch(39.1% 0.09 240.876);
-    --color-rose-900: oklch(41% 0.159 10.272);
-    --color-slate-100: oklch(96.8% 0.007 247.896);
     --color-slate-800: oklch(27.9% 0.041 260.031);
     --color-white: #fff;
     --spacing: 0.25rem;
