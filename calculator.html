@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="calculator.css">
         <script src="calculator.js"></script>
     </head>
-    <body class="bg-green-500 text-white">
+    <body class="bg-green-500 text-white flex flex-col items-center">
         <header>
         </header>
-        <main class="flex flex-col items-center gap-8">
+        <main class="flex flex-col items-center gap-8 w-40">
             <h1 class="text-3xl">Population Growth Calculator</h1>
             <p></p>
             <select name="Country" id="countries">
@@ -24,7 +24,13 @@
                 <option value="exponential">Exponential Projection</option>
                 <option value="logistic">Logistic Projection</option>
             </select>
-            <div class="grid grid-cols-3"> 
+
+            <select name="What are you looking for?" id="quantity">
+                <option value="pop">Population</option>
+                <option value="yrs">Years</option>
+            </select>
+
+            <div class="grid grid-cols-3 w-40"> 
                 <label for="rate">Rate</label>
                 <label for="time">Time</label>
                 <label for="capacity">Capacity</label>
