@@ -1,5 +1,5 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Population Growth Calculator</title>
@@ -7,28 +7,32 @@
         <link rel="stylesheet" href="calculator.css">
         <script src="calculator.js"></script>
     </head>
-    <body class="bg-green-500 text-white flex flex-col items-center">
-        <header class="h-20 text-3xl rounded-xl bg-amber-400 w-full">
-            <h1>Calculations</h1>
+    <body class="bg-emerald-900 text-white flex flex-col items-center">
+        <header class="text-3xl rounded-xl bg-sky-900 w-full text-center p-2">
+            <h1>amiya's calculations!</h1>
         </header>
-        <main class="flex flex-col items-stretch gap-8 w-100">
+        <main class="flex flex-col items-stretch gap-8 w-100 mt-2">
             <h1 class="text-2xl text-center">Population Growth Calculator</h1>
-            <p></p>
-            <select id="countries" class="bg-amber-700 rounded-md p-2">
+            <p class="bg-slate-800 p-2 rounded-md">This is a population growth calculator
+            that utilizes two different projection models: the exponential and the logistic
+            growth models. You can use this calculator to find either the projected
+            growth over a certain time period or the years it takes to reach
+            a specific population goal. </p>
+            <select id="countries" class="bg-slate-800 rounded-md p-2">
             </select>
 
-            <select id="mode" class="bg-amber-700 rounded-md p-2">
+            <select id="mode" class="bg-slate-800 rounded-md p-2">
                 <option value="sel">Select a mode</option>
                 <option value="exponential">Exponential Projection</option>
                 <option value="logistic">Logistic Projection</option>
             </select>
 
-            <select id="quantity" class="bg-amber-700 rounded-md p-2">
+            <select id="quantity" class="bg-slate-800 rounded-md p-2">
                 <option value="pop">Population</option>
                 <option value="yrs">Years</option>
             </select>
 
-            <div class="grid grid-cols-4 bg-amber-700 rounded-md p-2"> 
+            <div class="grid grid-cols-4 bg-slate-800 rounded-md p-2">
                 <label for="rate">Rate (%)</label>
                 <label for="time">Time (yrs)</label>
                 <label for="capacity">Capacity</label>
@@ -39,16 +43,13 @@
                 <input type="number" id="goal">
             </div>
 
+            <button id="calculate" class="bg-slate-800 rounded-md p-2">Project</button>
 
-
-            
-            <button id="calculate" class="bg-amber-700 rounded-md p-2">Project</button>
-            
-            <div id="result"></div>
+            <div id="result" class="text-center p-2 "></div>
 
         </main>
         <footer>
-
+            <p class="text-xs">made by Amiya, view source code for citations!</p>
         </footer>
     </body>
 </html>
