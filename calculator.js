@@ -1,4 +1,4 @@
-/* 
+/*
 This file contains all the Javascript for my population growth calculator.
 It holds all the interactivity and behavior for the calculator.
 */
@@ -70,7 +70,7 @@ window.onload = function() {
         result.innerHTML = "";
         let country = document.getElementById("countries").value;
         let current = mode.value;
-        
+
         let goal = document.getElementById("goal").value;
         let quantity = document.getElementById("quantity").value;
 
