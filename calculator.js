@@ -1,9 +1,9 @@
 function exponentialProjection(pop, rate, time) {
-    return pop*Math.exp(rate/100*time);
+    return Math.floor(pop*Math.exp(rate/100*time));
 }
 
 function logisticProjection(pop, rate, time, cap) {
-    return  cap / (1+((cap-pop) / pop) * Math.exp(-rate / 100 * time))
+    return  Math.floor(cap / (1+((cap-pop) / pop) * Math.exp(-rate / 100 * time)));
 }
 
 function iterativeExponential(pop, rate, time, result) {
@@ -12,20 +12,21 @@ function iterativeExponential(pop, rate, time, result) {
     }
 }
 
-function iterativeLogistic() {
+function iterativeLogistic(pop, rate, time, cap, result) {
     for(let i = 0; i <= time; i++) {
         result.innerHTML += logisticProjection(pop, rate, i, cap) + "<br>";
     }
 }
 
-function exponentialYears() {
-
+function exponentialYears(goal, pop, rate) {
+    return Math.round(Math.log(goal/pop) / rate * 100) / 100;
 }
 
-function logisticYears() {
-
+function logisticYears(goal, pop, rate, cap) {
+    let num = (cap-goal) * pop; 
+    let den = (cap-pop) * goal;
+    return -Math.log(num/den) / rate;
 }
-
 
 // dealing with JSON @ https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON
 async function populateCountries()  {
@@ -62,21 +63,30 @@ window.onload = function () {
     }   
 
     button.onclick = function() {
+        result.innerHTML = "";
         let country = document.getElementById("countries").value;
         let current = mode.value;
+        let goal = document.getElementById("goal").value;
+        let quantity = document.getElementById("quantity").value;
 
         let rate = document.getElementById("rate").value;
         let time = document.getElementById("time").value; 
-
-
-        if (current == "exponential") {
-            let expPop = iterativeExponential(country, rate, time, result);
-            
+        if (current === "exponential") {
+            if (quantity === "pop") { 
+                iterativeExponential(country, rate, time, result);
+            }
+            else {
+                result.innerHTML = exponentialYears(goal, country, rate/100);
+            }
         }
 
-        else if (current == "logistic") {
-            let logPop = logisticProjection(country, rate, time, cap.value);
-            result.innerHTML = logPop;
+        else if (current === "logistic") {
+            if (quantity === "pop") { 
+                iterativeLogistic(country, rate, time, cap.value, result);
+            }
+            else {
+                result.innerHTML  = logisticYears(goal, country, rate/100, cap.value);
+            }
         }
 
         else {
